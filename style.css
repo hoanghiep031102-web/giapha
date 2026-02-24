@@ -1,0 +1,148 @@
+@font-face {
+    font-family: "Chimbien";
+    src: url("fonts/UVNChimBien.TTF");
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #F4F1EC;
+}
+.title-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Gom icon + text thành 1 hàng */
+.title-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px; /* khoảng cách giữa icon và chữ */
+}
+.title-group:hover {
+    transform: translateY(-8px) scale(1.05);
+    filter: brightness(1.4) saturate(0.5);
+}
+.title-group:active {
+    transform: translateY(-10px);
+}
+
+
+
+h1 {
+    position: relative;
+    font-family: "Chimbien", Arial, sans-serif;
+    font-size: 80px;
+    margin-top: 80px;
+     color:   #C9A24D;
+
+     text-shadow:
+    2px 2px 0 #8A6F2D,
+    4px 4px 0 #5A471C;
+}
+h1 {
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Khi rê chuột */
+h1:hover {
+    color: #FFFFFF; /* trắng sáng */
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.8),
+        0 0 15px rgba(255,215,0,0.6),
+        2px 2px 0 #8A6F2D;
+
+    transform: translateY(-5px) scale(1.03);
+}
+
+
+/* Khi bấm */
+h1:active {
+    transform: translateY(2px) scale(0.97);
+}
+ 
+
+h1::before {
+    content: "";
+
+    position: absolute;
+
+    top: -70px;   /* Đẩy lên trên chữ */
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 120px;
+    height: 60px;
+
+    background: url("image/nguyetque.png") no-repeat center;
+    background-size: contain;
+}
+.ornament {
+    width: 70px;
+    height: 80px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ornament.left {
+    background-image: url("image/Corner_Ornament_Gold_Up_Left.png");
+}
+
+.ornament.right {
+    background-image: url("image/Corner_Ornament_Gold_Up_Right.png");
+    
+}
+
+
+/* Khung chứa 2 cụ */
+#home {
+    display: flex;
+    justify-content: center;
+    gap: 500px;
+    margin-top: 300px;
+}
+
+/* Ô của mỗi cụ */
+.ancestor {
+    width: 180px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Khi rê chuột vào */
+.ancestor:hover {
+    background: #e6f2ff;
+    transform: scale(1.05);
+}
+#music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: #C9A24D;
+    border: 2px solid #C9A24D;
+
+    padding: 8px 15px;
+    border-radius: 8px;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+#music-btn:hover {
+    background: #C9A24D;
+    color: black;
+}
