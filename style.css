@@ -1,94 +1,178 @@
 @font-face {
     font-family: "Chimbien";
     src: url("fonts/UVNChimBien.TTF");
+    font-display: swap;
 }
+
+    
+
+body /* Reset cơ bản */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: #F4F1EC;
+    line-height: 1.5;
+    overflow-x: hidden; /* chặn tràn ngang */
 }
+
+
+/* ================= TITLE BOX ================= */
+
 .title-box {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px; /* Mobile first */
+    padding: 0 12px;
 }
 
-/* Gom icon + text thành 1 hàng */
+
+/* Gom icon + text */
 .title-group {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 25px; /* khoảng cách giữa icon và chữ */
+
+    gap: 12px; /* mobile gọn */
+    text-align: center;
+
+    max-width: 100%;
+    flex-wrap: wrap;
+
+    transition: transform 0.3s ease,
+                filter 0.3s ease;
 }
+
+
+/* Hiệu ứng */
 .title-group:hover {
-    transform: translateY(-8px) scale(1.05);
-    filter: brightness(1.4) saturate(0.5);
+    transform: translateY(-4px) scale(1.02);
+    filter: brightness(1.15) saturate(0.95);
 }
+
 .title-group:active {
-    transform: translateY(-10px);
+    transform: scale(0.97);
 }
 
 
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (min-width: 768px) {
+
+    .title-box {
+        margin-top: 35px;
+    }
+
+    .title-group {
+        gap: 18px;
+        flex-wrap: nowrap;
+    }
+}
+
+/* PC */
+@media (min-width: 1024px) {
+
+    .title-box {
+        margin-top: 50px;
+    }
+
+    .title-group {
+        gap: 25px;
+    }
+}
+
+
+/* ================= TITLE ================= */
 
 h1 {
     position: relative;
+
     font-family: "Chimbien", Arial, sans-serif;
-    font-size: 80px;
-    margin-top: 80px;
-     color:   #C9A24D;
 
-     text-shadow:
-    2px 2px 0 #8A6F2D,
-    4px 4px 0 #5A471C;
-}
-h1 {
+    /* Font tự co theo màn hình */
+    font-size: clamp(32px, 8vw, 80px);
+
+    margin: 40px 0 0;
+
+    color: #C9A24D;
+
+    text-shadow:
+        1px 1px 0 #8A6F2D,
+        3px 3px 0 #5A471C;
+
     cursor: pointer;
-    transition: all 0.25s ease;
+
+    transition: transform 0.25s ease,
+                text-shadow 0.25s ease,
+                filter 0.25s ease,
+                color 0.25s ease;
 }
 
-/* Khi rê chuột */
+
+/* Hover */
 h1:hover {
-    color: #FFFFFF; /* trắng sáng */
+
+    color: #FFFFFF;
 
     text-shadow:
         0 0 8px rgba(255,255,255,0.8),
         0 0 15px rgba(255,215,0,0.6),
         2px 2px 0 #8A6F2D;
 
-    transform: translateY(-5px) scale(1.03);
+    transform: translateY(-3px) scale(1.02);
 }
 
 
-/* Khi bấm */
+/* Active */
 h1:active {
-    transform: translateY(2px) scale(0.97);
+    transform: scale(0.97);
 }
- 
+
+
+/* ================= ORNAMENT TRÊN TITLE ================= */
 
 h1::before {
+
     content: "";
 
     position: absolute;
 
-    top: -70px;   /* Đẩy lên trên chữ */
+    top: -50px;
     left: 50%;
 
     transform: translateX(-50%);
 
-    width: 120px;
-    height: 60px;
+    width: clamp(60px, 15vw, 120px);
+    height: clamp(30px, 8vw, 60px);
 
     background: url("image/nguyetque.png") no-repeat center;
     background-size: contain;
+
+    pointer-events: none;
 }
+
+
+/* ================= ORNAMENT HAI BÊN ================= */
+
 .ornament {
-    width: 70px;
-    height: 80px;
+
+    width: clamp(40px, 10vw, 70px);
+    height: clamp(50px, 12vw, 80px);
 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+
+    flex-shrink: 0; /* không bị méo khi co */
 }
+
 
 .ornament.left {
     background-image: url("image/Corner_Ornament_Gold_Up_Left.png");
@@ -96,7 +180,6 @@ h1::before {
 
 .ornament.right {
     background-image: url("image/Corner_Ornament_Gold_Up_Right.png");
-    
 }
 
 
@@ -109,7 +192,7 @@ h1::before {
 }
 
 /* Ô của mỗi cụ */
-.ancestor {
+.holy {
     width: 180px;
     padding: 20px;
     background: white;
@@ -120,29 +203,98 @@ h1::before {
 }
 
 /* Khi rê chuột vào */
-.ancestor:hover {
+.holy:hover {
     background: #e6f2ff;
     transform: scale(1.05);
 }
-#music-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
 
-    background: rgba(0, 0, 0, 0.6);
-    color: #C9A24D;
-    border: 2px solid #C9A24D;
+.hohoang {
+    width: 180px;
+    aspect-ratio: 9 / 14;
 
-    padding: 8px 15px;
-    border-radius: 8px;
+    padding: 0;
 
-    font-size: 16px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #eee;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ảnh tự scale theo khung */
+.hohoang img {
+    max-width: 100%;   /* 👈 tự thu theo width */
+    max-height: 100%;  /* 👈 tự thu theo height */
+
+    width: auto;       /* 👈 KHÔNG ép */
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.music-toggle {
+    position: relative;
+
+    width: 70px;
+    height: 36px;
+
+    background: linear-gradient(135deg, #1c1f2b, #0a0c14);
+    border-radius: 999px;
+
+    border: none;
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    padding: 0;
+    overflow: hidden;
+
+    transition: background 0.4s ease;
 }
 
-#music-btn:hover {
-    background: #C9A24D;
-    color: black;
+/* Mặt tròn */
+.toggle-circle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+
+    width: 28px;
+    height: 28px;
+
+    background: #f5f3ce;
+    border-radius: 50%;
+
+    box-shadow: 0 0 8px rgba(255,255,200,0.8);
+
+    transition: all 0.4s ease;
 }
+
+/* BẬT = DAY */
+.music-toggle.active {
+    background: linear-gradient(135deg, #6dd5fa, #2980b9);
+}
+
+/* Mặt trời */
+.music-toggle.active .toggle-circle {
+    left: 38px;
+
+    background: #fff9a6;
+    box-shadow: 0 0 12px rgba(255,230,120,0.9);
+}
+
+/* TẮT = NIGHT */
+.music-toggle:not(.active) {
+    background: linear-gradient(135deg, #05070f, #141a2a);
+}
+
+/* Mặt trăng */
+.music-toggle:not(.active) .toggle-circle {
+    background: #dbe2ff;
+    box-shadow: 0 0 10px rgba(180,200,255,0.6);
+}
+
+

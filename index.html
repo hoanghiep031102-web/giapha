@@ -2,9 +2,10 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gia Phả Gia Đình</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -13,7 +14,7 @@
     <div class="title-group">
         <div class="ornament left"></div>
 
-        <h1><span>Gia Phả Dòng Họ</span></h1>
+        <h1><span>Gia Phả Gia Đình</span></h1>
 
         <div class="ornament right"></div>
     </div>
@@ -24,19 +25,21 @@
     <!-- Màn hình chọn cụ -->
     <div id="home">
 
-        <div class="ancestor">
-            <p> Cụ Dậu và Cụ Nhặt</p>
+        <div class="holy">
+            <p> HỌ LÝ</p>
         </div>
 
-        <div class="ancestor">
-            <p> Cụ Khắc và Cụ Thỏ</p>
+        <div class="hohoang">
+            <img src="image/cukhac.jpg" img>
         </div>
 
     </div>
-    <audio id="bg-music" autoplay loop>
+    <audio id="nhacnen" autoplay loop>
     <source src="nhac/VIDEOCLUB - ROI  INSTRUMENTAL (  paroles  letra) FREE DOWNLOAD IN DESCRIPTION.mp3" type="audio/mp3">
 </audio>
-<button id="music-btn">🔊 Bật nhạc</button>
+<button id="nutnhac" class="music-toggle active">
+    <span class="toggle-circle"></span>
+</button>
 
 </body>
 </html>
