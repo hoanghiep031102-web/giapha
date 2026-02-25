@@ -1,0 +1,9 @@
+/* Fix đè chữ search */
+.bft-search input::placeholder {
+    color: #555;
+    opacity: 1;
+}
+
+.bft-search input {
+    background-image: none !important;
+}

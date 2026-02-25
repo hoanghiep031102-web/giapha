@@ -188,7 +188,7 @@ h1::before {
     display: flex;
     justify-content: center;
     gap: 500px;
-    margin-top: 300px;
+    margin-top: 150px;
 }
 
 /* Ô của mỗi cụ */
@@ -226,17 +226,32 @@ h1::before {
 }
 
 /* Ảnh tự scale theo khung */
-.hohoang img {
-    max-width: 100%;   /* 👈 tự thu theo width */
-    max-height: 100%;  /* 👈 tự thu theo height */
-
-    width: auto;       /* 👈 KHÔNG ép */
-    height: auto;
-
-    object-fit: contain;
-
-    display: block;
+.hohoang {
+    display: inline-block; /* ôm theo ảnh */
+    padding: 0;
+    border: none;
+    background: none;
+    overflow: visible;     /* cho zoom tràn */
+    
 }
+.hohoang img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+
+    object-fit: unset;
+
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.hohoang:hover img {
+    transform: scale(1.5);
+}
+.hohoang img:active {
+    transform: scale(1.0);
+}
+
 
 .music-toggle {
     position: relative;

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gia Phả Họ Hoàng</title>
+
+    <!-- Bootstrap (chỉ cho trang này) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS riêng nếu muốn -->
+    <!-- <link rel="stylesheet" href="hohoang.css"> -->
+     <script src="hohoang.js" defer></script>
+     <link rel="stylesheet" href="hoang.css">
+</head>
+
+<body>
+   <div id="tree" style="width:100%; height:300px;"></div>
+   <link rel="stylesheet" href="https://balkan.app/js/FamilyTree.css">
+<script src="https://balkan.app/js/FamilyTree.js"></script>
+</body>
+<script>
+var tree = new FamilyTree(document.getElementById("tree"), {
+
+    nodeBinding: {
+        field_0: "name",
+        field_1: "info"
+    },
+
+    nodes: [
+
+        // Đời 1
+        { id: 1, name: "Cụ Hoàng Văn Khắc", info: "1900", pids: [2] },
+        { id: 2, name: "Cụ Thỏ", info: "1900", pids: [1] }
+
+        // Đời 2
+        
+    ]
+});
+</script>
