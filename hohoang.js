@@ -45,3 +45,45 @@ var tree = new FamilyTree(document.getElementById("tree"), {
         { id: 2, name: "Cụ Thỏ", info: "1900", pids: [1] }
     ]
 });
+// ===== Chuyển cảnh =====
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===== PAGE ENTER (LOAD + BACK) ===== */
+
+  document.body.classList.add("page-loaded");
+
+
+  /* ===== PAGE EXIT ===== */
+
+  document.querySelectorAll(".smooth-link").forEach(link => {
+
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const href = this.getAttribute("href");
+
+      document.body.classList.add("slide-out");
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 450);
+    });
+
+  });
+
+});
+
+
+/* ===== FIX BACK BUTTON ===== */
+
+window.addEventListener("pageshow", function (event) {
+
+  if (event.persisted) {
+    // Khi load từ cache (bấm Back)
+
+    document.body.classList.remove("slide-out");
+    document.body.classList.add("page-loaded");
+  }
+
+});

@@ -23,7 +23,7 @@ body {
 }
 
 
-/* ================= TITLE BOX ================= */
+/* Tiêu đề  */
 
 .title-box {
     display: flex;
@@ -61,7 +61,7 @@ body {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE */
 
 /* Tablet */
 @media (min-width: 768px) {
@@ -89,7 +89,7 @@ body {
 }
 
 
-/* ================= TITLE ================= */
+/* TITLE  */
 
 h1 {
     position: relative;
@@ -311,5 +311,6 @@ h1::before {
     background: #dbe2ff;
     box-shadow: 0 0 10px rgba(180,200,255,0.6);
 }
+/* chuyển cảnh */
 
 

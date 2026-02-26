@@ -1,0 +1,22 @@
+/* Trạng thái bình thường */
+body {
+  transition: all 0.45s ease-in-out;
+}
+
+/* Khi vừa load */
+body.page-loaded {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Khi chưa load xong */
+body:not(.page-loaded) {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+/* Khi rời trang */
+body.slide-out {
+  opacity: 0;
+  transform: translateX(-100vw);
+}

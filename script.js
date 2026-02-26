@@ -25,3 +25,23 @@ btn.addEventListener("click", () => {
     }
 
 });
+// Chuyển cảnh 
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".smooth-link").forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const href = this.href;
+
+      document.body.classList.add("slide-out");
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400);
+    });
+  });
+});
+window.addEventListener("load", () => {
+  document.body.classList.add("page-loaded");
+});

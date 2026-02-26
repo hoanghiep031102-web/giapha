@@ -1,9 +1,19 @@
-/* Fix đè chữ search */
-.bft-search input::placeholder {
-    color: #555;
-    opacity: 1;
+/* Fix lỗi cây bị cắt */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto; /* cho phép kéo xuống */
 }
 
-.bft-search input {
-    background-image: none !important;
+#tree {
+  width: 100%;
+  min-height: 100vh; /* ít nhất bằng màn hình */
+
+  overflow: visible; /* KHÔNG cắt nội dung */
 }
+
+
