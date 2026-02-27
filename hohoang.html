@@ -34,14 +34,115 @@ var tree = new FamilyTree(document.getElementById("tree"), {
         // Đời các cụ
         { id: 1, name: "Hoàng Văn Khắc", info: "1900", pids: [2] },
         { id: 2, name: " Thỏ", info: "1900", pids: [1] },
+        // Đời bà Gấc
+
+          { id: 26, name: "Hoàng Thị Gấc", info: "", fid: 1, mid: 2, pids:[27] },
+        { id: 27, name: "An Văn Măng", info: "", pids:[26]  },
+        // Đời con bà Gấc
+        { id: 28, name: "An Văn Khiêm", info: "", fid: 26, mid: 27 },
+        { id: 29, name: "An Văn Ba", info: "", fid: 26, mid: 27 },
+        { id: 30, name: "An Văn Tứ", info: "", fid: 26, mid: 27 },
+        { id: 31, name: "An Văn Thể", info: "", fid: 26, mid: 27 },
+        { id: 32, name: "An Văn Quế", info: "", fid: 26, mid: 27 },
+        { id: 33, name: "An Thị Mạng", info: "", fid: 26, mid: 27 },
+        { id: 34, name: "An Thị Đức", info: "", fid: 26, mid: 27 },
+
+        // Đời bà Vanh
+         { id: 35, name: "Hoàng Thị Tú (Vanh)", info: "", fid: 1, mid: 2, pids:[36] },
+        { id: 36, name: "An Văn Vinh", info: "", pids:[35]  },
+        // Đời con bà Vanh
+         { id: 37, name: "An Văn Hoạt", info: "", fid: 35, mid: 36 },
+         { id: 38, name: "An Văn Hiền", info: "", fid: 35, mid: 36 },
+         { id: 39, name: "An Văn Tuấn", info: "", fid: 35, mid: 36 },
+         { id: 40, name: "An Thị Duy", info: "", fid: 35, mid: 36 },
+         { id: 41, name: "An Thị Thứ", info: "", fid: 35, mid: 36 },
+         { id: 42, name: "An Thị Tư", info: "", fid: 35, mid: 36 },
+
+         // Đời ông Sắc
+         { id: 43, name: "Hoàng Văn Sắc", info: "1933", fid: 1, mid: 2, pids:[45] },
+        { id: 45, name: "Hoàng Thị Tách", info: "", pids:[43]  },
+        // Đời con ông Sắc
+        { id: 46, name: "Hoàng Thị Sáng", info: "", fid: 43, mid: 45, pids:[47] },
+        { id: 47, name: "Vũ Văn Mạnh ", info: "", pids:[46]  },
+
+        { id: 48, name: "Hoàng Tiến Dũng", info: "", fid: 43, mid: 45, pids:[49] },
+        { id: 49, name: "Nguyễn Thị Thu Hà ", info: "", pids:[48]  },
+
+        { id: 50, name: "Hoàng Thị Loan", info: "", fid: 43, mid: 45, pids:[51] },
+        { id: 51, name: "Phạm Văn Đăng ", info: "", pids:[50]  },
+
+        { id: 52, name: "Hoàng Ánh Vân", info: "", fid: 43, mid: 45, pids:[53] },
+        { id: 53, name: "Dương Ngọc Nghĩa ", info: "", pids:[52]  },
+
+        { id: 54, name: "Hoàng Tuấn Khoa ", info: "", fid: 43, mid: 45, pids:[55] },
+        { id: 55, name: "Nguyễn Thị Thanh", info: "", pids:[54]  },
+
+        { id: 56, name: "Hoàng Trung Kiên", info: "", fid: 43, mid: 45, pids:[57] },
+        { id: 57, name: "Vũ Thị Thúy", info: "", pids:[56]  },
+
+        // Đời con cháu nhà ông Sắc
+
+         { id: 58, name: "Vũ Thị Trà", info: "", fid: 46, mid: 47, pids:[59] },
+        { id: 59, name: "Lê Văn Việt", info: "", pids:[58]  },
+        
+        { id: 60, name: "Lê Thị Trà My", info: "", fid: 58, mid: 59 },
+        { id: 61, name: "Lê Văn Nam", info: "", fid: 58, mid: 59  },
+
+        { id: 62, name: "Hoàng Đức Trung", info: "", fid: 48, mid: 49, pids:[63] },
+        { id: 63, name: "Nguyễn Thị Thu Hồng", info: "", pids:[62]  },
+
+        { id: 64, name: "Hoàng Bảo Anh", info: "", fid: 62, mid: 63  },
+
+        { id: 66, name: "Hoàng Việt Anh", info: "1999", fid: 48, mid: 49, pids:[67] },
+        { id: 67, name: "Nguyễn Trâm", info: "", pids:[66]  },
+
+        { id: 68, name: "Phạm Viết Chinh", info: "", fid: 50, mid: 51, pids:[69] },
+        { id: 69, name: "Nguyễn Anh Dũng", info: "", pids:[68]  },
+
+        { id: 70, name: "Nguyễn Phạm Khánh An", info: "", fid: 68, mid: 69  },
+
+        { id: 71, name: "Phạm Huyền Trang", info: "2004", fid: 50, mid: 51 },
+
+        { id: 72, name: "Dương Thùy Linh", info: "", fid: 52, mid: 53, pids:[73] },
+        { id: 73, name: "Thân Đức Trung", info: "", pids:[72]  },
+
+        { id: 74, name: "Dương Quỳnh Anh", info: "", fid: 52, mid: 53 },
+
+        { id: 75, name: "Hoàng Minh Đức", info: "2007", fid: 54, mid: 55 },
+
+        { id: 76, name: "Hoàng Bách", info: "2012", fid: 54, mid: 55 },
+
+        { id: 77, name: "Hoàng Thanh Mai", info: "2002", fid: 56, mid: 57 },
+
+        { id: 78, name: "Hoàng Đức Tuấn", info: "", fid: 56, mid: 57 },
+
+        // Đời bà Đông
+        { id: 79, name: "Hoàng Thị Bun", info: "", fid: 1, mid: 2, pids:[80] },
+        { id: 80, name: "Nguyễn Văn Đông", info: "", pids:[79]  },
+
+        // Đời con nhà bà Đông
+        { id: 81, name: "Nguyễn Thị Bin", info: "", fid: 79, mid: 80 },
+        { id: 82, name: "Nguyễn Thị Sáng", info: "", fid: 79, mid: 80 },
+        { id: 83, name: "Nguyễn Thị Sớm", info: "", fid: 79, mid: 80 },
+        { id: 84, name: "Nguyễn Thị Mai", info: "", fid: 79, mid: 80 },
+        { id: 85, name: "Nguyễn Thị Sinh", info: "", fid: 79, mid: 80 },
+        { id: 86, name: "Nguyễn Thị Lục", info: "", fid: 79, mid: 80 },
+        { id: 87, name: "Nguyễn Văn Tuế", info: "", fid: 79, mid: 80 },
+
+        
+       
+        
         // Đời ông bà
         { id: 3, name: "Hoàng Văn Luy", info: "1936", fid: 1, mid: 2, pids:[4] },
         { id: 4, name: "Hoàng Thị Thanh (Liên)", info: "1944", pids:[3]  },
-        // Đời bố mẹ
+        
+        
+        
+        // Đời bố mẹ ( ông Luy)
           { id: 5, name: "Hoàng Kim Hạnh (Hoa)", info: "", fid: 3, mid: 4, pids:[6] },
         { id: 6, name: "Ngô Trung Dũng ", info: "", pids:[5]  },
 
-        { id: 7, name: "Hoàng Kim Hà ", info: "", fid: 3, mid: 4, pids:[8] },
+        { id: 7, name: "Hoàng Thị Kim Hà ", info: "", fid: 3, mid: 4, pids:[8] },
         { id: 8, name: "Lê Hữu Sơn ", info: "", pids:[7]  },
 
         { id: 9, name: "Hoàng Quốc Hưng", info: "", fid: 3, mid: 4, pids:[10] },
@@ -51,13 +152,22 @@ var tree = new FamilyTree(document.getElementById("tree"), {
         { id: 12, name: "Lý Hồng Nam ", info: "1971", pids:[11]  },
         // Đời các con
         { id: 14, name: "Ngô Hoàng Long", info: "1989", fid: 6, mid: 5, pids:[15] },
-        { id: 15, name: "Phạm Ngân ", info: "1971", pids:[14]  },
+        { id: 15, name: "Phạm Ngân ", info: "1991", pids:[14]  },
+
+        { id: 88, name: "Ngô Bảo Uyên", info: "2018", fid: 14, mid: 15 },
+        { id: 89, name: "Ngô Thùy Dương", info: "2020", fid: 14, mid: 15},
+
+
 
         { id: 18, name: "Ngô Kim Phượng", info: "1996", fid: 6, mid: 5, pids:[19] },
         { id: 19, name: "Trần Phước Huy", info: "", pids:[18]  },
+        
+        { id: 90, name: "Trần Phước Minh", info: "2025", fid: 18, mid: 19 },
 
         { id: 16, name: "Lê Thanh Tùng", info: "1992", fid: 7, mid: 8, pids:[17] },
         { id: 17, name: "Minh", info: "", pids:[16]  },
+
+        { id: 91, name: "Anya Lê", info: "2025", fid: 16, mid: 17 },
         
         { id: 20, name: "Lê Hoàng Hà My", info: "2002", fid: 7, mid: 8 },
 
@@ -66,6 +176,9 @@ var tree = new FamilyTree(document.getElementById("tree"), {
 
           { id: 23, name: "Lý Hoàng Việt Phương", info: "1996", fid: 11, mid: 12, pids:[24] },
         { id: 24, name: "Nguyễn Trang", info: "1996", pids:[23]  },
+
+        { id: 92, name: "Lý Nhã Kim", info: "2021", fid: 23, mid: 24 },
+        { id: 93, name: "Lý Minh Đăng", info: "2025", fid: 23, mid: 24 },
 
         { id: 25, name: "Lý Hoàng Hiệp", info: "2002", fid: 11, mid: 12, },
 

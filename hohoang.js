@@ -1,5 +1,10 @@
 var tree = new FamilyTree(document.getElementById("tree"), {
 
+    orientation: FamilyTree.orientation.top,
+
+    layout: FamilyTree.tree,   // ⬅️ BẮT BUỘC
+    mode: "normal",            // ⬅️ BẮT BUỘC
+
     search: true,
 
     nodeBinding: {
