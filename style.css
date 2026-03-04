@@ -6,7 +6,7 @@
 
     
 
-body /* Reset cơ bản */
+ /* Reset cơ bản */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -144,7 +144,8 @@ h1::before {
 
     position: absolute;
 
-    top: -50px;
+    top: clamp(-35px, -6vw, -50px);
+
     left: 50%;
 
     transform: translateX(-50%);
@@ -187,25 +188,9 @@ h1::before {
 #home {
     display: flex;
     justify-content: center;
-    gap: 500px;
-    margin-top: 150px;
-}
-
-/* Ô của mỗi cụ */
-.holy {
-    width: 180px;
-    padding: 20px;
-    background: white;
-    border-radius: 12px;
-    border: 2px solid #333;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* Khi rê chuột vào */
-.holy:hover {
-    background: #e6f2ff;
-    transform: scale(1.05);
+    gap: clamp(20px, 5vw, 80px);
+    margin-top: clamp(40px, 10vw, 120px);
+    flex-wrap: wrap; /* Cho xuống dòng khi hẹp */
 }
 
 .hohoang {
@@ -312,5 +297,18 @@ h1::before {
     box-shadow: 0 0 10px rgba(180,200,255,0.6);
 }
 /* chuyển cảnh */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
 
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+}
 

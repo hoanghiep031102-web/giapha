@@ -1,19 +1,61 @@
-/* Fix lỗi cây bị cắt */
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+/* ===== BODY ===== */
 html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+    width: 100%;
+    height: 100%;
 
-  overflow-x: hidden;
-  overflow-y: auto; /* cho phép kéo xuống */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    background: linear-gradient(180deg, #f8f6f2, #ede9df);
+
+    overflow: hidden;
 }
 
+/* ===== TREE CONTAINER ===== */
 #tree {
-  width: 100%;
-  min-height: 100vh; /* ít nhất bằng màn hình */
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
 
-  overflow: visible; /* KHÔNG cắt nội dung */
+
+    background: radial-gradient(
+        circle at center,
+        #ffffff 0%,
+        #f3efe6 70%
+    );
+
+    border-top: 3px solid #c9a24d;
+
+    box-shadow:
+        inset 0 0 40px rgba(0,0,0,0.05);
+
+    position: relative;
+     touch-action: none;   /* mở gesture */
+    -ms-touch-action: none;
+
+    overscroll-behavior: none;
+    will-change: transform;
+}
+/* Safari / iOS fix */
+#tree,
+#tree canvas,
+#tree svg {
+    -webkit-user-select: none;
+    user-select: none;
 }
 
+
+
+/* Mobile tối ưu */
+@media (max-width: 768px) {
+    #tree {
+        height: 100svh; /* fix mobile chrome */
+    }
+}
 

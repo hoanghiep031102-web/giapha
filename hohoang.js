@@ -1,5 +1,15 @@
 var tree = new FamilyTree(document.getElementById("tree"), {
 
+     mouseScroll: FamilyTree.action.zoom,
+    enablePan: true,
+    enableZoom: true,
+    center: true,
+
+    scaleInitial: window.innerWidth < 768 ? 0.7 : 1,
+    scaleMin: 0.3,
+    scaleMax: 2,
+    zoomSpeed: 0.8,
+
     orientation: FamilyTree.orientation.top,
 
     layout: FamilyTree.tree,   // ⬅️ BẮT BUỘC
@@ -49,6 +59,7 @@ var tree = new FamilyTree(document.getElementById("tree"), {
         { id: 1, name: "Cụ Hoàng Văn Khắc", info: "1900", pids: [2] },
         { id: 2, name: "Cụ Thỏ", info: "1900", pids: [1] }
     ]
+    
 });
 // ===== Chuyển cảnh =====
 
@@ -92,3 +103,4 @@ window.addEventListener("pageshow", function (event) {
   }
 
 });
+
