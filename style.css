@@ -1,65 +1,105 @@
-/* ===== FONT ===== */
 @font-face {
     font-family: "Chimbien";
     src: url("fonts/UVNChimBien.TTF");
     font-display: swap;
 }
 
-/* ===== RESET ===== */
+    
+
+ /* Reset cơ bản */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* ===== BODY ===== */
+/* Body */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-
     background: #F4F1EC;
     line-height: 1.5;
-
-    min-height: 100vh;
-
-    overflow-x: hidden;
+    overflow-x: hidden; /* chặn tràn ngang */
 }
 
-/* ===== TITLE ===== */
+
+/* Tiêu đề  */
+
 .title-box {
     display: flex;
     justify-content: center;
-
-    margin-top: clamp(20px, 5vw, 50px);
+    margin-top: 20px; /* Mobile first */
     padding: 0 12px;
 }
 
+
+/* Gom icon + text */
 .title-group {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: clamp(10px, 3vw, 25px);
+    gap: 12px; /* mobile gọn */
+    text-align: center;
 
     max-width: 100%;
     flex-wrap: wrap;
 
-    transition: 0.3s ease;
+    transition: transform 0.3s ease,
+                filter 0.3s ease;
 }
 
+
+/* Hiệu ứng */
 .title-group:hover {
-    transform: translateY(-3px) scale(1.02);
+    transform: translateY(-4px) scale(1.02);
+    filter: brightness(1.15) saturate(0.95);
 }
 
-/* ===== H1 ===== */
+.title-group:active {
+    transform: scale(0.97);
+}
+
+
+/* RESPONSIVE */
+
+/* Tablet */
+@media (min-width: 768px) {
+
+    .title-box {
+        margin-top: 35px;
+    }
+
+    .title-group {
+        gap: 18px;
+        flex-wrap: nowrap;
+    }
+}
+
+/* PC */
+@media (min-width: 1024px) {
+
+    .title-box {
+        margin-top: 50px;
+    }
+
+    .title-group {
+        gap: 25px;
+    }
+}
+
+
+/* TITLE  */
+
 h1 {
     position: relative;
 
     font-family: "Chimbien", Arial, sans-serif;
 
-    font-size: clamp(22px, 6vw, 72px);
+    /* Font tự co theo màn hình */
+    font-size: clamp(32px, 8vw, 80px);
 
-    margin: 30px 0 0;
+    margin: 40px 0 0;
 
     color: #C9A24D;
 
@@ -69,32 +109,49 @@ h1 {
 
     cursor: pointer;
 
-    transition: 0.25s ease;
+    transition: transform 0.25s ease,
+                text-shadow 0.25s ease,
+                filter 0.25s ease,
+                color 0.25s ease;
 }
 
+
+/* Hover */
 h1:hover {
-    color: #fff;
+
+    color: #FFFFFF;
 
     text-shadow:
         0 0 8px rgba(255,255,255,0.8),
-        0 0 15px rgba(255,215,0,0.6);
+        0 0 15px rgba(255,215,0,0.6),
+        2px 2px 0 #8A6F2D;
 
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
 }
 
-/* ===== ORNAMENT TOP ===== */
+
+/* Active */
+h1:active {
+    transform: scale(0.97);
+}
+
+
+/* ================= ORNAMENT TRÊN TITLE ================= */
+
 h1::before {
+
     content: "";
 
     position: absolute;
 
-    top: clamp(-30px, -6vw, -45px);
+    top: clamp(-35px, -6vw, -50px);
+
     left: 50%;
 
     transform: translateX(-50%);
 
-    width: clamp(50px, 14vw, 110px);
-    height: clamp(25px, 7vw, 55px);
+    width: clamp(60px, 15vw, 120px);
+    height: clamp(30px, 8vw, 60px);
 
     background: url("image/nguyetque.png") no-repeat center;
     background-size: contain;
@@ -102,17 +159,21 @@ h1::before {
     pointer-events: none;
 }
 
-/* ===== SIDE ORNAMENT ===== */
+
+/* ================= ORNAMENT HAI BÊN ================= */
+
 .ornament {
-    width: clamp(35px, 9vw, 65px);
-    height: clamp(45px, 11vw, 75px);
+
+    width: clamp(40px, 10vw, 70px);
+    height: clamp(50px, 12vw, 80px);
 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 
-    flex-shrink: 0;
+    flex-shrink: 0; /* không bị méo khi co */
 }
+
 
 .ornament.left {
     background-image: url("image/Corner_Ornament_Gold_Up_Left.png");
@@ -122,21 +183,25 @@ h1::before {
     background-image: url("image/Corner_Ornament_Gold_Up_Right.png");
 }
 
-/* ===== HOME ===== */
+
+/* Khung chứa 2 cụ */
 #home {
     display: flex;
     justify-content: center;
-
-    margin-top: clamp(30px, 8vw, 100px);
-    padding: 0 10px;
+    gap: clamp(20px, 5vw, 80px);
+    margin-top: clamp(40px, 10vw, 120px);
+    flex-wrap: wrap; /* Cho xuống dòng khi hẹp */
 }
 
-/* ===== IMAGE BOX ===== */
 .hohoang {
-    width: 100%;
-    max-width: 260px;
+    width: 180px;
+    aspect-ratio: 9 / 14;
 
+    padding: 0;
+
+    background: #fff;
     border-radius: 14px;
+    border: 1px solid #eee;
 
     overflow: hidden;
 
@@ -145,84 +210,105 @@ h1::before {
     align-items: center;
 }
 
-/* ===== IMAGE ===== */
+/* Ảnh tự scale theo khung */
+.hohoang {
+    display: inline-block; /* ôm theo ảnh */
+    padding: 0;
+    border: none;
+    background: none;
+    overflow: visible;     /* cho zoom tràn */
+    
+}
 .hohoang img {
-    width: 100%;
+    width: auto;
     height: auto;
+    max-width: 100%;
 
-    border-radius: 14px;
+    object-fit: unset;
 
-    transition: 0.3s ease;
+    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
 .hohoang:hover img {
-    transform: scale(1.1);
+    transform: scale(1.5);
+}
+.hohoang img:active {
+    transform: scale(1.0);
 }
 
-/* ===== MUSIC BUTTON ===== */
+
 .music-toggle {
-    position: fixed;
+    position: relative;
 
-    bottom: 20px;
-    right: 20px;
-
-    width: 60px;
-    height: 32px;
+    width: 70px;
+    height: 36px;
 
     background: linear-gradient(135deg, #1c1f2b, #0a0c14);
-
     border-radius: 999px;
-    border: none;
 
+    border: none;
     cursor: pointer;
 
-    z-index: 999;
+    padding: 0;
+    overflow: hidden;
+
+    transition: background 0.4s ease;
 }
 
+/* Mặt tròn */
 .toggle-circle {
     position: absolute;
-
     top: 4px;
     left: 4px;
 
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
 
     background: #f5f3ce;
     border-radius: 50%;
 
-    transition: 0.3s ease;
+    box-shadow: 0 0 8px rgba(255,255,200,0.8);
+
+    transition: all 0.4s ease;
 }
 
-/* ON */
+/* BẬT = DAY */
 .music-toggle.active {
     background: linear-gradient(135deg, #6dd5fa, #2980b9);
 }
 
+/* Mặt trời */
 .music-toggle.active .toggle-circle {
-    left: 32px;
+    left: 38px;
+
+    background: #fff9a6;
+    box-shadow: 0 0 12px rgba(255,230,120,0.9);
 }
 
-/* OFF */
+/* TẮT = NIGHT */
 .music-toggle:not(.active) {
     background: linear-gradient(135deg, #05070f, #141a2a);
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 600px) {
-
-    h1 {
-        font-size: 22px;
-    }
-
-    .ornament {
-        width: 45px;
-        height: 55px;
-    }
-
-    .hohoang {
-        max-width: 220px;
-    }
-
+/* Mặt trăng */
+.music-toggle:not(.active) .toggle-circle {
+    background: #dbe2ff;
+    box-shadow: 0 0 10px rgba(180,200,255,0.6);
 }
+/* chuyển cảnh */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+}
+
