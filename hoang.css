@@ -58,4 +58,7 @@ html, body {
         height: 100svh; /* fix mobile chrome */
     }
 }
+#tree {
+    overflow: visible !important;
+}
 

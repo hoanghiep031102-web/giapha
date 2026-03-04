@@ -17,13 +17,75 @@
 </head>
 
 <body>
+  <button class="btn btn-success mb-3" onclick="exportPDF()">
+    📄 Xuất bản PDF
+</button>
   
   
   <div id="tree"></div>
    <link rel="stylesheet" href="https://balkan.app/js/FamilyTree.css">
 <script src="https://balkan.app/js/FamilyTree.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 </a>
+<script>
+async function exportPDF() {
+    try {
+        const element = document.getElementById("tree");
+
+        // Zoom nhỏ để hiện toàn bộ cây
+        tree.zoom(0.2);
+        tree.center();
+
+        // Đợi render xong
+        await new Promise(r => setTimeout(r, 1200));
+
+        // Lấy size thật
+        const width = element.scrollWidth;
+        const height = element.scrollHeight;
+
+        const pxToMm = 0.264583;
+
+        const pdfWidth = width * pxToMm;
+        const pdfHeight = height * pxToMm;
+
+        const opt = {
+            margin: 0,
+            filename: 'gia-pha-ho-hoang-full.pdf',
+
+            image: {
+                type: 'jpeg',
+                quality: 1
+            },
+
+            html2canvas: {
+                scale: window.innerWidth < 768 ? 2 : 3,
+                useCORS: true,
+                backgroundColor: '#ffffff',
+                scrollX: 0,
+                scrollY: 0,
+                windowWidth: width,
+                windowHeight: height
+            },
+
+            jsPDF: {
+                unit: 'mm',
+                format: [pdfWidth, pdfHeight]
+            }
+        };
+
+        await html2pdf().set(opt).from(element).save();
+
+        // Zoom lại bình thường
+        tree.zoom(1);
+        tree.center();
+
+    } catch (err) {
+        console.error(err);
+        alert("Xuất PDF bị lỗi, thử reload trang rồi xuất lại nhé!");
+    }
+}
+</script>
 </body>
 <script>
 var tree = new FamilyTree(document.getElementById("tree"), {
